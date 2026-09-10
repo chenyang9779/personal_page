@@ -276,6 +276,12 @@ samp {
   max-width: var(--max-width-narrow);
 }
 
+/* --- Section inner content wrapper --- */
+.section-content {
+  max-width: var(--max-width-narrow);
+  margin-right: auto;
+}
+
 /* ==========================================================================
    Header / Navigation
    ========================================================================== */
@@ -911,14 +917,30 @@ samp {
   color: var(--color-text-secondary);
 }
 
-.grade {
-  display: inline-block;
-  font-size: 0.875rem;
+/* Edinburgh results — two-column grid */
+.result-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0 var(--space-lg);
+  font-size: 0.9375rem;
+  line-height: 1.6;
   color: var(--color-text-secondary);
-  margin-right: var(--space-lg);
-  margin-bottom: var(--space-xs);
+  padding-left: var(--space-md);
 }
 
+.result-module {
+  text-align: left;
+}
+
+.result-grade {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  justify-self: end;
+}
+
+/* Southampton list — restrained bullets */
 .edu-list {
   list-style: none;
   display: flex;
@@ -934,7 +956,7 @@ samp {
 }
 
 .edu-list li::before {
-  content: '—';
+  content: '·';
   position: absolute;
   left: 0;
   color: var(--color-text-muted);
@@ -954,6 +976,19 @@ samp {
   letter-spacing: 0.06em;
   color: var(--color-text-muted);
   margin-bottom: var(--space-md);
+}
+
+/* Slightly stronger muted text in dark mode for readability */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .publication-label,
+  :root:not([data-theme="light"]) .edu-details dt {
+    color: #7a7570;
+  }
+}
+
+[data-theme="dark"] .publication-label,
+[data-theme="dark"] .edu-details dt {
+  color: #7a7570;
 }
 
 .publication-citation {
@@ -1261,6 +1296,11 @@ samp {
   /* Timeline: reduce padding for narrow screens */
   .timeline-item {
     padding-left: var(--space-md);
+  }
+
+  /* Edinburgh results: tighter at narrow widths */
+  .result-row {
+    padding-left: var(--space-sm);
   }
 }
 
