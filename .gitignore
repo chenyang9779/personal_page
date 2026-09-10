@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+dist/
+.build/
+.astro/
+
+# OS
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Env
+.env
+.env.local
+
+# CV PDF (user-provided)
+# public/cv.pdf

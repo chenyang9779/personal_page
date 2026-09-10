@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chenyang Wu — Software &amp; Research Engineer</title>
+  <meta name="description" content="Software engineer working across AI infrastructure, distributed compute, CPU performance analysis, backend systems, and engineering automation.">
+  <meta name="author" content="Chenyang Wu">
+  <link rel="canonical" href="https://chenyang9779.github.io">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chenyang Wu — Software &amp; Research Engineer">
+  <meta property="og:description" content="Software engineer working across AI infrastructure, distributed compute, CPU performance analysis, backend systems, and engineering automation.">
+  <meta property="og:url" content="https://chenyang9779.github.io">
+  <meta property="og:locale" content="en_GB">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Chenyang Wu — Software &amp; Research Engineer">
+  <meta name="twitter:description" content="Software engineer working across AI infrastructure, distributed compute, CPU performance analysis, backend systems, and engineering automation.">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- Skip link for accessibility -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Navigation -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="#top" class="header-name" aria-label="Chenyang Wu — Home">
+        Chenyang Wu
+      </a>
+      <nav aria-label="Main navigation" class="site-nav">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation">
+          <span class="nav-toggle-lines"></span>
+        </button>
+        <ul id="nav-menu" class="nav-menu" role="list">
+          <li><a href="#work">Work</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#technical">Technical Areas</a></li>
+          <li><a href="#education">Education</a></li>
+          <li>
+            <a href="https://github.com/chenyang9779" rel="noopener" target="_blank" class="nav-link-external">
+              GitHub
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section id="top" class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero-content">
+          <h1 id="hero-heading" class="hero-name">Chenyang Wu</h1>
+          <p class="hero-role">Software &amp; Research Engineer</p>
+          <p class="hero-desc">
+            Building AI infrastructure, distributed compute platforms, and performance-analysis tooling.
+            Based in <span class="location">London</span>.
+          </p>
+          <p class="hero-areas">
+            AI Infrastructure &middot; Distributed Systems &middot; CPU Performance &middot; Backend Engineering
+          </p>
+          <p class="hero-status">
+            <span class="status-badge">U.S. Permanent Resident</span>
+            No sponsorship required &middot; Open to U.S. relocation
+          </p>
+          <div class="hero-links">
+            <a href="#work" class="link-primary">Selected work</a>
+            <a href="https://github.com/chenyang9779" rel="noopener" target="_blank" class="link-secondary">GitHub</a>
+            <a href="https://linkedin.com/in/chenyang-wu-baa665205" rel="noopener" target="_blank" class="link-secondary">LinkedIn</a>
+            <a href="mailto:aaronwu608@gmail.com" class="link-secondary">Email</a>
+            <a href="/public/cv.pdf" class="link-secondary" download>CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Selected Engineering Work -->
+    <section id="work" class="section section--wide">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title">Selected Engineering Work</h2>
+          <p class="section-subtitle">Systems and platforms built for internal use at Huawei R&amp;D UK.</p>
+        </header>
+
+        <div class="work-grid">
+
+          <article class="work-item">
+            <div class="work-item-header">
+              <h3 class="work-item-title">Distributed Simulation Infrastructure</h3>
+              <span class="work-item-metric">1,000 concurrent</span>
+            </div>
+            <p class="work-item-desc">
+              A 10–20 node Slurm cluster with 1,000+ aggregate CPU cores.
+              Python-based experimentation system for generating configurations,
+              launching parameter sweeps, tracking failures, and collecting results across thousands of gem5 simulations.
+            </p>
+            <div class="work-item-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Slurm</span>
+              <span class="tag">gem5</span>
+            </div>
+          </article>
+
+          <article class="work-item">
+            <div class="work-item-header">
+              <h3 class="work-item-title">LLM Serving Infrastructure</h3>
+              <span class="work-item-metric">Multi-node</span>
+            </div>
+            <p class="work-item-desc">
+              Deployment and day-to-day operation of an internal multi-node LLM inference platform
+              providing a unified OpenAI-compatible API. Owns model serving, load balancing,
+              monitoring, upgrades, and troubleshooting.
+            </p>
+            <div class="work-item-tags">
+              <span class="tag">Docker</span>
+              <span class="tag">vLLM</span>
+              <span class="tag">LiteLLM</span>
+            </div>
+          </article>
+
+          <article class="work-item">
+            <div class="work-item-header">
+              <h3 class="work-item-title">Engineering Analytics Platform</h3>
+              <span class="work-item-metric">Full stack</span>
+            </div>
+            <p class="work-item-desc">
+              Internal analytics platform automating daily project and operational reporting.
+              Features a FastAPI backend, React frontend, background job processing,
+              parallel computation, and REST integrations.
+            </p>
+            <div class="work-item-tags">
+              <span class="tag">FastAPI</span>
+              <span class="tag">React</span>
+              <span class="tag">Docker</span>
+            </div>
+          </article>
+
+          <article class="work-item">
+            <div class="work-item-header">
+              <h3 class="work-item-title">CI/CD Pipeline</h3>
+              <span class="work-item-metric">First of its kind</span>
+            </div>
+            <p class="work-item-desc">
+              Designed and deployed the team's first Jenkins CI workflow — GitLab webhooks,
+              Groovy pipelines for merge-request validation, commit checks, gem5 builds,
+              simulation stages, artifact collection, and scheduled execution.
+            </p>
+            <div class="work-item-tags">
+              <span class="tag">Jenkins</span>
+              <span class="tag">Groovy</span>
+              <span class="tag">GitLab CI</span>
+            </div>
+          </article>
+
+          <article class="work-item">
+            <div class="work-item-header">
+              <h3 class="work-item-title">Performance Analysis Tooling</h3>
+              <span class="work-item-metric">10,000+</span>
+            </div>
+            <p class="work-item-desc">
+              Python-based analysis framework processing 10,000+ simulation outputs.
+              Detects missing and anomalous results, compares configurations,
+              and generates automated reports with visualisations.
+            </p>
+            <div class="work-item-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Pandas</span>
+              <span class="tag">Plotly</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" aria-hidden="true">
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <div class="container container--narrow">
+        <header class="section-header">
+          <h2 class="section-title">Experience</h2>
+        </header>
+
+        <div class="timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-meta">
+              <time datetime="2025-09" class="timeline-date">Sep 2025 – Present</time>
+              <span class="timeline-location">Cambridge, UK</span>
+            </div>
+            <h3 class="timeline-title">CPU Research Engineer</h3>
+            <p class="timeline-company">Huawei Technologies R&amp;D (UK) Limited</p>
+            <ul class="timeline-details">
+              <li>Own deployment and day-to-day operation of a multi-node LLM inference platform using Docker, vLLM, and LiteLLM.</li>
+              <li>CPU microarchitecture performance analysis across benchmark suites and design configurations — IPC, speedup, power.</li>
+              <li>Maintain Python analysis tooling processing 10,000+ simulation outputs with automated reporting and visualisation.</li>
+              <li>Operate a 10–20 node Slurm cluster with 1,000+ aggregate cores for gem5 simulations.</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-meta">
+              <time datetime="2023-03" class="timeline-date">Mar 2023 – Sep 2025</time>
+              <span class="timeline-location">Cambridge, UK</span>
+            </div>
+            <h3 class="timeline-title">CPU Architecture Intern</h3>
+            <p class="timeline-company">Huawei Technologies R&amp;D (UK) Limited</p>
+            <ul class="timeline-details">
+              <li>Built and operated a distributed simulation platform across 10–20 nodes, managing up to 1,000 concurrent gem5 simulations.</li>
+              <li>Designed and deployed the team's first Jenkins CI/CD pipeline with Groovy pipelines, GitLab webhooks, and automated build and simulation stages.</li>
+              <li>Developed an internal engineering analytics platform with a FastAPI backend, React frontend, and automated daily reporting.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" aria-hidden="true">
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container container--narrow">
+        <header class="section-header">
+          <h2 class="section-title">About</h2>
+        </header>
+        <div class="about-content">
+          <p>
+            Early-career software engineer with three plus years of combined internship and full-time experience
+            building internal AI infrastructure, distributed simulation platforms, performance-analysis tooling,
+            CI/CD pipelines, and backend applications.
+          </p>
+          <p>
+            I work primarily in Python on Linux systems. My strengths are automation, systems thinking,
+            and taking engineering platforms from initial deployment into reliable day-to-day operation.
+            I enjoy building tooling that other engineers actually use — the kind of work that stays
+            in the background and makes everything else run more smoothly.
+          </p>
+          <p>
+            Based in London. U.S. Permanent Resident. No sponsorship required.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" aria-hidden="true">
+
+    <!-- Technical Areas -->
+    <section id="technical" class="section">
+      <div class="container container--narrow">
+        <header class="section-header">
+          <h2 class="section-title">Technical Areas</h2>
+        </header>
+
+        <div class="tech-grid">
+
+          <div class="tech-category">
+            <h3 class="tech-category-title">Languages</h3>
+            <ul class="tech-list">
+              <li>Python</li>
+              <li>Bash</li>
+              <li>Java</li>
+              <li>Scala</li>
+            </ul>
+          </div>
+
+          <div class="tech-category">
+            <h3 class="tech-category-title">Backend &amp; Data</h3>
+            <ul class="tech-list">
+              <li>FastAPI</li>
+              <li>REST APIs</li>
+              <li>Pandas</li>
+              <li>NumPy</li>
+              <li>PostgreSQL</li>
+              <li>Plotly</li>
+              <li>Matplotlib</li>
+            </ul>
+          </div>
+
+          <div class="tech-category">
+            <h3 class="tech-category-title">Infrastructure &amp; Systems</h3>
+            <ul class="tech-list">
+              <li>Linux</li>
+              <li>Docker / Docker Compose</li>
+              <li>Slurm</li>
+              <li>Jenkins</li>
+              <li>GitLab CI/CD</li>
+              <li>Git</li>
+              <li>gem5</li>
+              <li>QEMU</li>
+            </ul>
+          </div>
+
+          <div class="tech-category">
+            <h3 class="tech-category-title">AI Infrastructure</h3>
+            <ul class="tech-list">
+              <li>vLLM</li>
+              <li>LiteLLM</li>
+              <li>Distributed inference</li>
+              <li>Model serving</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider" aria-hidden="true">
+
+    <!-- Education & Publication -->
+    <section id="education" class="section">
+      <div class="container container--narrow">
+        <header class="section-header">
+          <h2 class="section-title">Education &amp; Publication</h2>
+        </header>
+
+        <div class="education-grid">
+
+          <div class="edu-item">
+            <div class="edu-item-header">
+              <h3 class="edu-title">University of Edinburgh</h3>
+              <span class="edu-degree">MSc Computer Science — Merit</span>
+            </div>
+            <time datetime="2024-09" class="edu-date">Sep 2024 – Nov 2025</time>
+            <dl class="edu-details">
+              <dt>Dissertation</dt>
+              <dd>Converting Images into a Collection of Shapes with CLIP-Based Perceptual Guidance</dd>
+              <dt>Selected results</dt>
+              <dd>
+                <span class="grade">Computer Graphics — 95/100</span>
+                <span class="grade">Programming for Data Science at Scale — 93/100</span>
+                <span class="grade">Applied Cloud Programming — 87/100</span>
+              </dd>
+            </dl>
+          </div>
+
+          <div class="edu-item">
+            <div class="edu-item-header">
+              <h3 class="edu-title">University of Southampton</h3>
+              <span class="edu-degree">BSc Mathematics with Computer Science — 2:1</span>
+            </div>
+            <time datetime="2021-09" class="edu-date">Sep 2021 – Jul 2024</time>
+            <ul class="edu-list">
+              <li>Dean's List</li>
+              <li>Final-year project: Stock Price Prediction with LSTM — 85/100</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="publication">
+          <h3 class="publication-label">Publication</h3>
+          <p class="publication-citation">
+            <strong>Egocentric Doxastic Logic</strong>.
+            <em>Logic and Logical Philosophy</em>, 2024.
+            <a href="https://doi.org/10.12775/LLP.2024.024" rel="noopener" target="_blank">
+              DOI: 10.12775/LLP.2024.024
+            </a>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer / Contact -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container container--narrow">
+      <div class="footer-content">
+        <h2 class="footer-heading">Get in touch</h2>
+        <div class="footer-links">
+          <a href="mailto:aaronwu608@gmail.com" class="footer-link">
+            aaronwu608@gmail.com
+          </a>
+          <a href="https://github.com/chenyang9779" rel="noopener" target="_blank" class="footer-link">
+            github.com/chenyang9779
+          </a>
+          <a href="https://linkedin.com/in/chenyang-wu-baa665205" rel="noopener" target="_blank" class="footer-link">
+            linkedin.com/in/chenyang-wu-baa665205
+          </a>
+        </div>
+        <p class="footer-copy">
+          Chenyang Wu &middot; London, UK &middot; <a href="/public/cv.pdf" class="footer-link-cv" download>Download CV</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="/js/main.js" defer></script>
+
+</body>
+</html>

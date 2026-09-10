@@ -1,0 +1,74 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Sets permissions for GITHUB_TOKEN
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Build and validate job
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Check HTML structure
+        run: |
+          if [ ! -f "index.html" ]; then
+            echo "Error: index.html not found"
+            exit 1
+          fi
+          echo "index.html found"
+
+      - name: Check static assets
+        run: |
+          errors=0
+          for f in css/style.css js/main.js robots.txt favicon.svg; do
+            if [ ! -f "$f" ]; then
+              echo "Warning: $f not found"
+              errors=$((errors + 1))
+            fi
+          done
+          if [ $errors -gt 0 ]; then
+            echo "$errors asset(s) missing"
+            exit 1
+          fi
+          echo "All static assets present"
+
+  # Deploy job — for chen yang9779.github.io repos, files are already on main
+  # For other repos, deploy to gh-pages branch
+  deploy:
+    needs: validate
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
