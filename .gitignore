@@ -20,5 +20,4 @@ Thumbs.db
 .env
 .env.local
 
-# CV PDF (user-provided)
-# public/cv.pdf
+# CV PDF

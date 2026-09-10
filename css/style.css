@@ -403,7 +403,16 @@ samp {
 
 /* --- Name & role --- */
 .hero-name {
-  margin-bottom: var(--space-xs);
+  margin-bottom: 2px;
+}
+
+.hero-name-alt {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-sm);
 }
 
 .hero-role {
@@ -615,6 +624,15 @@ samp {
   line-height: 1.65;
   margin-bottom: var(--space-md);
   max-width: 60ch;
+}
+
+/* --- Analysis dimensions (secondary supporting text) --- */
+.work-item-analysis-terms {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+  letter-spacing: 0.01em;
 }
 
 /* --- Tags --- */
