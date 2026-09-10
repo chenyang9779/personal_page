@@ -7,6 +7,9 @@
 (function () {
   'use strict';
 
+  // --- Progressive enhancement: enable reveal animations ---
+  document.documentElement.classList.add('js');
+
   // --- Mobile navigation toggle ---
   var navToggle = document.querySelector('.nav-toggle');
   var navMenu = document.getElementById('nav-menu');
@@ -122,7 +125,8 @@
 
   // --- Theme detection (reads system preference for initial state) ---
   function getPreferredTheme() {
-    var stored = localStorage.getItem('theme');
+    var stored;
+    try { stored = localStorage.getItem('theme'); } catch (_) { /* private browsing, blocked */ }
     if (stored) return stored;
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
@@ -132,9 +136,11 @@
 
   // Listen for system theme changes
   window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
-    if (!localStorage.getItem('theme')) {
-      document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
-    }
+    try {
+      if (!localStorage.getItem('theme')) {
+        document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+      }
+    } catch (_) { /* private browsing, blocked */ }
   });
 
 })();

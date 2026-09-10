@@ -14,15 +14,15 @@
   <meta property="og:description" content="Software engineer working across AI infrastructure, distributed compute, CPU performance analysis, backend systems, and engineering automation.">
   <meta property="og:url" content="https://chenyang9779.github.io/personal_page">
   <meta property="og:locale" content="en_GB">
-  <meta property="og:image" content="https://chenyang9779.github.io/personal_page/og-image.svg">
+  <meta property="og:image" content="https://chenyang9779.github.io/personal_page/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Chenyang Wu (Aaron) — Software &amp; Research Engineer">
   <meta name="twitter:description" content="Software engineer working across AI infrastructure, distributed compute, CPU performance analysis, backend systems, and engineering automation.">
-  <meta name="twitter:image" content="https://chenyang9779.github.io/personal_page/og-image.svg">
+  <meta name="twitter:image" content="https://chenyang9779.github.io/personal_page/og-image.png">
 
   <!-- Favicon -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -133,10 +133,30 @@
               <line x1="122" y1="30" x2="198" y2="30" stroke="var(--hero-trace)" stroke-width="0.3"/>
               <line x1="122" y1="80" x2="198" y2="80" stroke="var(--hero-trace)" stroke-width="0.3"/>
               <line x1="122" y1="130" x2="198" y2="130" stroke="var(--hero-trace)" stroke-width="0.3"/>
-              <!-- Animated trace dots -->
-              <circle class="hero-trace-dot" cx="122" cy="30" r="1.5" fill="var(--hero-dot)" style="animation-delay: 0s;"/>
-              <circle class="hero-trace-dot" cx="122" cy="80" r="1.5" fill="var(--hero-dot)" style="animation-delay: 3s;"/>
-              <circle class="hero-trace-dot" cx="170" cy="100" r="1.5" fill="var(--hero-dot)" style="animation-delay: 1.5s;"/>
+              <!-- Animated trace dots (SMIL animateMotion along actual paths) -->
+              <defs>
+                <path id="trace-path-1" d="M122,30 L198,30"/>
+                <path id="trace-path-2" d="M122,80 L198,80"/>
+                <path id="trace-path-3" d="M170,100 L130,140"/>
+              </defs>
+              <circle r="1.5" fill="var(--hero-dot)">
+                <animateMotion dur="7s" begin="0s" repeatCount="indefinite" rotate="auto">
+                  <mpath href="#trace-path-1"/>
+                </animateMotion>
+                <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.05;0.4;0.9;1" dur="7s" begin="0s" repeatCount="indefinite"/>
+              </circle>
+              <circle r="1.5" fill="var(--hero-dot)">
+                <animateMotion dur="7s" begin="3s" repeatCount="indefinite" rotate="auto">
+                  <mpath href="#trace-path-2"/>
+                </animateMotion>
+                <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.05;0.4;0.9;1" dur="7s" begin="3s" repeatCount="indefinite"/>
+              </circle>
+              <circle r="1.5" fill="var(--hero-dot)">
+                <animateMotion dur="7s" begin="1.5s" repeatCount="indefinite" rotate="auto">
+                  <mpath href="#trace-path-3"/>
+                </animateMotion>
+                <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.05;0.4;0.9;1" dur="7s" begin="1.5s" repeatCount="indefinite"/>
+              </circle>
             </svg>
           </div>
 
