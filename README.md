@@ -79,20 +79,9 @@ There is no build step. All files are production-ready as-is.
 
 ## CV / Resume PDF
 
-Place your CV PDF at:
+Place your CV PDF as `cv.pdf` in the project root directory.
 
-```
-public/cv.pdf
-```
-
-Ensure the `public` directory exists:
-
-```bash
-mkdir -p public
-cp your-cv.pdf public/cv.pdf
-```
-
-The site includes links to `/public/cv.pdf` in the hero section and footer. Update these paths if you change the location.
+The site includes links to `cv.pdf` in the hero section and footer.
 
 ## Design decisions
 
@@ -106,4 +95,3 @@ The site includes links to `/public/cv.pdf` in the hero section and footer. Upda
 ## Licence
 
 Private — do not redistribute.
-# personal_page
