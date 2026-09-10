@@ -663,6 +663,60 @@ samp {
   gap: var(--space-2xl);
 }
 
+/* --- Combined company entry (single company, multiple roles) --- */
+.timeline-company-entry {
+  padding-left: var(--space-lg);
+  border-left: 2px solid var(--color-border);
+}
+
+.timeline-company-date {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.01em;
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.timeline-company-info {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.timeline-company-name {
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+.timeline-roles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.timeline-role {
+  padding-left: var(--space-md);
+  border-left: 1px solid var(--color-border-strong);
+}
+
+.role-date {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.01em;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.role-title {
+  font-size: 1.0625rem;
+  margin-bottom: 0;
+}
+
+/* --- Single-item timeline entry (legacy, for single-role companies) --- */
 .timeline-item {
   padding-left: var(--space-lg);
   border-left: 2px solid var(--color-border);
