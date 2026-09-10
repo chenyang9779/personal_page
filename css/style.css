@@ -570,15 +570,8 @@ samp {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-lg);
+  margin-top: var(--space-md);
   margin-bottom: var(--space-md);
-}
-
-.work-item-metrics--cols2 {
-  flex-direction: row;
-}
-
-.work-item-metrics--cols3 {
-  flex-direction: row;
 }
 
 .work-metric {
@@ -605,13 +598,15 @@ samp {
   margin-top: 2px;
 }
 
-/* --- For metrics rows that include a label-only item --- */
-.work-item-metrics--cols2 .work-metric-label-only {
+/* Inline label — value + key info on one line */
+.work-metric-label-inline {
   font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  color: var(--color-text-muted);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  letter-spacing: 0;
+  text-transform: none;
   line-height: 1.5;
-  padding: 2px 0;
 }
 
 /* --- Description --- */
