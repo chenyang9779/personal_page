@@ -128,11 +128,32 @@
   // Initial setup
   initReveals();
 
+  // Hero SMIL trace control: pause if reduced motion, resume on change
+  var heroSvg = document.querySelector('.hero-visual svg');
+  var heroSvgAnimsSupported = heroSvg && typeof heroSvg.pauseAnimations === 'function';
+
+  function setHeroAnimsActive(active) {
+    if (!heroSvgAnimsSupported) return;
+    if (active) {
+      heroSvg.unpauseAnimations();
+    } else {
+      heroSvg.pauseAnimations();
+    }
+  }
+
+  if (prefersReducedMotion.matches) {
+    setHeroAnimsActive(false);
+  }
+
+  prefersReducedMotion.addEventListener('change', function (e) {
+    setHeroAnimsActive(!e.matches);
+  });
+
   // BFCache restore: restart hero SMIL traces (frozen timeline)
   window.addEventListener('pageshow', function (event) {
-    if (event.persisted) {
-      var heroSvg = document.querySelector('.hero-visual svg');
-      if (heroSvg && typeof heroSvg.pauseAnimations === 'function') {
+    if (event.persisted && heroSvgAnimsSupported) {
+      // Only restart if motion is allowed; reduced-motion user should stay paused
+      if (!prefersReducedMotion.matches) {
         heroSvg.pauseAnimations();
         heroSvg.setCurrentTime(0);
         heroSvg.unpauseAnimations();
