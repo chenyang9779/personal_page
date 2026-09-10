@@ -90,14 +90,21 @@
   }
 
   // --- Section entrance transitions (IntersectionObserver) ---
-  var animatedElements = document.querySelectorAll(
-    '.section, .work-item, .timeline-company-entry, .about-content, .tech-grid, .education-grid, .publication'
-  );
-
-  // Respect reduced-motion preference
+  // Only enable reveal animations when JS is available AND IntersectionObserver is supported
+  // AND the user does not prefer reduced motion. Without JS, CSS keeps everything visible.
   var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-  if (!prefersReducedMotion.matches && animatedElements.length > 0) {
+  function initReveals() {
+    var animatedElements = document.querySelectorAll(
+      '.section, .work-item, .timeline-company-entry, .about-content, .tech-grid, .education-grid, .publication'
+    );
+
+    if (prefersReducedMotion.matches || animatedElements.length === 0 || !window.IntersectionObserver) {
+      return; // CSS already keeps content visible (no-JS or reduced-motion); nothing to animate
+    }
+
+    document.documentElement.classList.add('reveal-enabled');
+
     var observer = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
@@ -116,12 +123,22 @@
     animatedElements.forEach(function (el) {
       observer.observe(el);
     });
-  } else {
-    // If reduced-motion is preferred, show all content immediately
-    animatedElements.forEach(function (el) {
-      el.classList.add('is-visible');
-    });
   }
+
+  // Initial setup
+  initReveals();
+
+  // BFCache restore: restart hero SMIL traces (frozen timeline)
+  window.addEventListener('pageshow', function (event) {
+    if (event.persisted) {
+      var heroSvg = document.querySelector('.hero-visual svg');
+      if (heroSvg && typeof heroSvg.pauseAnimations === 'function') {
+        heroSvg.pauseAnimations();
+        heroSvg.setCurrentTime(0);
+        heroSvg.unpauseAnimations();
+      }
+    }
+  });
 
   // --- Theme detection (reads system preference for initial state) ---
   function getPreferredTheme() {
