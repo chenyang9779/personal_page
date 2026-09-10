@@ -1,6 +1,7 @@
 /* ==========================================================================
    Chenyang Wu — Personal Website
-   Minimal interactivity: nav toggle, theme detection, active section highlighting
+   Minimal interactivity: nav toggle, theme detection, active section highlighting,
+   section entrance animations
    ========================================================================== */
 
 (function () {
@@ -37,7 +38,7 @@
 
   // --- Close mobile nav on escape ---
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && navMenu.classList.contains('is-open')) {
+    if (e.key === 'Escape' && navMenu && navMenu.classList.contains('is-open')) {
       navToggle.setAttribute('aria-expanded', 'false');
       navMenu.classList.remove('is-open');
       navToggle.focus();
@@ -82,6 +83,40 @@
         });
         ticking = true;
       }
+    });
+  }
+
+  // --- Section entrance transitions (IntersectionObserver) ---
+  var animatedElements = document.querySelectorAll(
+    '.section, .work-item, .timeline-company-entry, .about-content, .tech-grid, .education-grid, .publication'
+  );
+
+  // Respect reduced-motion preference
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  if (!prefersReducedMotion.matches && animatedElements.length > 0) {
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
+      }
+    );
+
+    animatedElements.forEach(function (el) {
+      observer.observe(el);
+    });
+  } else {
+    // If reduced-motion is preferred, show all content immediately
+    animatedElements.forEach(function (el) {
+      el.classList.add('is-visible');
     });
   }
 
